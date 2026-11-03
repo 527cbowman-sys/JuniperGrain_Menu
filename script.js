@@ -4,7 +4,37 @@
 // Write the rest of the JavaScript yourself.
 // =============================================================
 
-const API = "PASTE YOUR /exec WEB ADDRESS HERE";
+const API = "https://script.google.com/macros/s/AKfycbwzcfJMXk_-g254nh0sJgpIM-BeigTpuc-eyu_D0lVzJvzyyaFe8KoPd9QjcLsNJt6B/exec";
+
+const statusMessage = document.getElementById("status");
+const menuContainer = document.getElementById("menu");
+const filterContainer = document.getElementById("filters");
+
+let allItems = [];
+
+async function loadMenu() {
+    const response = await fetch(API);
+    if (!response.ok) {
+        throw new Error("HTTP error" + response.status);
+    }
+
+    const items = await response.json();
+    return items;
+}
+
+async function startMenu() {
+    statusMessage.textContent = "Loading menu...";
+    try {
+        allItems = await loadMenu();
+        //builtFilters()
+        //showMenu()
+        statusMessage.textContent = "";
+    }
+    catch (error) {
+        statusMessage.textContent = "Sorry, we couldn't load the menu. Please try again later. :(";
+        console.error(error);
+    }
+}
 
 // 1. async function loadMenu()
 //    fetch the API, check response.ok, return the JSON.
@@ -22,3 +52,5 @@ const API = "PASTE YOUR /exec WEB ADDRESS HERE";
 //    A click shows only that category's items.
 
 // 5. Call startMenu() when the page opens.
+
+startMenu();
