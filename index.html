@@ -1,27 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menu | Juniper & Grain</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu | Juniper & Grain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <img src="img/logo.png" alt="Juniper & Grain logo" class="logo">
-    <h1>Our Menu</h1>
-  </header>
 
-  <main>
-    <!-- Your script builds one button per category in here. -->
-    <nav id="filters"></nav>
+    <header class="hero">
+        <img src="img/logo.png" alt="Juniper & Grain logo" class="logo">
 
-    <!-- Loading and error messages go here. -->
-    <p id="status"></p>
+        <p class="eyebrow">FRESHLY MADE • LOCALLY SOURCED</p>
+        <h1>Our Menu</h1>
+        <p class="subtitle">
+            Thoughtfully crafted food and drinks, made with love.
+        </p>
 
-    <!-- Your script builds the category headings and item cards in here. -->
-    <section id="menu"></section>
-  </main>
+        <div class="hero-decoration"></div>
+    </header>
+
+    <main>
+
+        <section class="menu-intro">
+            <p class="section-label">EXPLORE OUR SELECTION</p>
+            <h2>Something delicious awaits.</h2>
+        </section>
+
+        <nav id="filters" aria-label="Filter menu categories"></nav>
+
+        <p id="status" role="status"></p>
+
+        <section id="menu"></section>
+
+    </main>
+
+    <footer>
+        <p>JUNIPER & GRAIN</p>
+        <span>Good food. Good company. Good moments.</span>
+    </footer>
+
 </body>
 </html>

@@ -52,7 +52,7 @@ function getCategories() {
 
 //Build cards
 function makeCard(item) {
-    let cardClass =  'card';
+    let cardClass = 'card';
     let badge = '';
     let soldText = '';
     let tagsHTML = '';
@@ -61,13 +61,13 @@ function makeCard(item) {
         badge = `<span class="badge">Popular</span>`;
     }
     if(item.soldOut) {
-        cardClass += 'is-sold';
-        soldText = `<p class="sold">Sold Out</p>`;
+    cardClass += ' is-sold';
+    soldText = `<p class="sold">Sold Out</p>`;
     }
 
     item.tags.forEach(function(tag){
         tagsHTML += `<li>${tag}</li>`;
-    })
+    });
 
     return `
     <article class="${cardClass}">
